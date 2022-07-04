@@ -1,10 +1,10 @@
 Funcionamiento general:
-Pulsa un boton[traducir] para pegar una entrada de texto copiada en el portapapeles
-Muestra la entrada de texto
-Separa los caracteres
+Pulsa un boton[traducir] para operar con un texto copiado en el portapapeles o introducida manualmente en un cuadro de texto
+Muestra la entrada de texto en el cuadro de texto
+Separa los caracteres para operar con ellos
 Borra barras espaciadoras
 Realiza un incremento dado (+2) a los numeros
-Muestra el resultado y copialo al portapapeles 
+Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapapeles 
 
 
 Casilla de autocompletado:
