@@ -8,7 +8,7 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
 
 
 Casilla de autocompletado, al estar marcada esta casilla realiza la siguiente operación:
-Con el navegador abierto en página web especifica
+Con el navegador web abierto en página especifica
 EScribe el resultado de la conversión en la entrada de texto
-Marca la casilla "No soy un robót" (Se puede requerir intervención humana)
+Marca la casilla "No soy un robót" (Se puede requerir intervención humana) //Marcar la casilla manualmente y evitar este paso ==> detectar si ya está marcada.
 Pulsa el botón "VERIFICAR CÓDIGO".
