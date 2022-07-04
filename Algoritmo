@@ -1,5 +1,5 @@
 Funcionamiento general:
-Pulsa un boton[traducir] para operar con un texto copiado en el portapapeles o introducida manualmente en un cuadro de texto
+Pulsa un boton[convertir] para operar con un texto copiado en el portapapeles o introducida manualmente en un cuadro de texto
 Muestra la entrada de texto en el cuadro de texto
 Separa los caracteres para operar con ellos
 Borra barras espaciadoras
@@ -7,6 +7,8 @@ Realiza un incremento dado (+2) a los numeros
 Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapapeles 
 
 
-Casilla de autocompletado:
-Con el navegador abierto en página de la web.
-Pegalo en la entrada de texto, marca la casilla "No soy un robót" y pulsa el botón "VERIFICAR CÓDIGO".
+Casilla de autocompletado, al estar marcada esta casilla realiza la siguiente operación:
+Con el navegador abierto en página web especifica
+EScribe el resultado de la conversión en la entrada de texto
+Marca la casilla "No soy un robót" (Se puede requerir intervención humana)
+Pulsa el botón "VERIFICAR CÓDIGO".
