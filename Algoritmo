@@ -1,5 +1,12 @@
+Funcionamiento general:
 Pulsa un boton[traducir] para pegar una entrada de texto copiada en el portapapeles
+Muestra la entrada de texto
 Separa los caracteres
 Borra barras espaciadoras
 Realiza un incremento dado (+2) a los numeros
 Muestra el resultado y copialo al portapapeles 
+
+
+Casilla de autocompletado:
+Con el navegador abierto en página de la web.
+Pegalo en la entrada de texto, marca la casilla "No soy un robót" y pulsa el botón "VERIFICAR CÓDIGO".
