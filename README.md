@@ -1,5 +1,5 @@
 # ForocochesCodigo
-Desencripta el código obtenido en una de las funetes oficiales rápidamente para ganar la invitación al foro más grande de España.
+Descifra el código obtenido en una de las fuentes oficiales instantaneamente para ganar la invitación al foro más grande de España.
 
 *Disclamer: Este software no está vinculado funcionalmente, ni perjudica, ni daña el funcionamiento de Forocoches.*
 
