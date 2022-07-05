@@ -54,11 +54,13 @@ public class principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
+        jButton3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
-        jLabel1.setText("CODIGO ENCRIPTADO:");
+        jLabel1.setText("CODIGO CIFRADO:");
 
         jTextField1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -71,8 +73,10 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(0, 255, 204));
         jButton1.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        jButton1.setText("OPERAR");
+        jButton1.setText("Descifrar");
+        jButton1.setToolTipText("Descifra el texto o el portapapeles y lo pega en el portapapeles");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -82,20 +86,33 @@ public class principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
         jLabel2.setText("CODIGO RESUELTO:");
 
-        jButton2.setText("...");
+        jButton2.setMnemonic('B');
+        jButton2.setText("❌");
+        jButton2.setToolTipText("Borra solo el texto");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setText("Pegar en navegador");
+        jCheckBox1.setText("Navegador");
         jCheckBox1.setEnabled(false);
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
             }
         });
+
+        jButton3.setMnemonic('C');
+        jButton3.setText("📋");
+        jButton3.setToolTipText("Copia el texto");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/roto2.gif"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,13 +125,20 @@ public class principal extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel2)
                         .addComponent(jLabel1)
-                        .addComponent(jTextField2)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(61, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,12 +152,15 @@ public class principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBox1)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3))
         );
 
         pack();
@@ -156,37 +183,48 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
         
         */
 
-        
-        try {
-            jTextField1.setText(copiarPortapapeles());
-        } catch (UnsupportedFlavorException | IOException e) {
-            //JOptionPane.showMessageDialog(null, "No se puede leer el portapapeles");
+        if (jTextField1.getText().isEmpty()){
+            try {
+                jTextField1.setText(copiarPortapapeles());
+            } catch (UnsupportedFlavorException | IOException e) {
+                //JOptionPane.showMessageDialog(null, "No se puede leer el portapapeles");
+            }
         }
-
         String codigo = jTextField1.getText();
-        
+        String clave="";
         codigo = codigo.replace("_", "");
         
         //JOptionPane.showMessageDialog(rootPane, "longitud cadena: "+codigo.length());
-        for (int x=codigo.length()-1; x>=0  ; x--  ){  // -1 para no salirse del indice del string, operamos de manera decreciente para que no coincidan numeros ya remplazados.
+        for (int x=0; codigo.length()>x  ; x++  ){  
+            
+            String auxString=codigo.substring(x, x+1);
             try {
                 
                 int aux = Integer.parseInt(codigo.substring(x, x+1)); // Numeros al formato numerico, si es letra error y salta al siguiente.
                 //JOptionPane.showMessageDialog(rootPane, "Numero: "+aux);
                 aux = aux + 2;
                 
-                String auxString = aux+"";  
+                auxString = aux+"";  
                 //JOptionPane.showMessageDialog(rootPane, "Caracter sumado: "+auxString);
                 
-                codigo = codigo.replace(codigo.substring(x, x+1), auxString); // Sustituimos el numero incrementado 
-                /*se podria cambiar el número en el lugar especifico de la cadena, pero habria que programar más y se soluciona operando de manera decreciente*/
-                  
+                
+                /* 
+                codigo = codigo.replaceAll(codigo.substring(x, x+1), auxString); // Sustituimos el numero incrementado 
+                NECESITAMOS CAMBIAR LOS NUMEROS EN LA POSICIÓN SIN USAR REPLACE, PORQUE DA PROBLEMAS AL COINCIDIR NUMEROS
+                LO SOLUCIONAMOS CREANDO UNA CADENA NUEVA
+                */
+                
+                
                 //JOptionPane.showMessageDialog(rootPane, codigo);
             } catch (NumberFormatException e) {
             } 
+            
+            clave = clave.replace(clave, clave+auxString);
+           
+            
         }
         
-        jTextField2.setText(codigo);
+        jTextField2.setText(clave);
         
         try {
             pegarPortapapeles(codigo);
@@ -204,14 +242,23 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
         
-            // TODO add your handling code here:
-        try {
-            jTextField1.setText(copiarPortapapeles());
+           try {
+            jTextField2.setText(copiarPortapapeles());
         } catch (UnsupportedFlavorException | IOException ex) {
         }
         
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        // TODO add your handling code here:
+        
+            jTextField1.setText("");
+        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -252,9 +299,11 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
