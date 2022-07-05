@@ -225,11 +225,8 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
         }
         
         jTextField2.setText(clave);
-        
-        try {
-            pegarPortapapeles(codigo);
-        } catch (Exception e) {
-        }
+        pegarPortapapeles(clave);
+
 
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -244,11 +241,7 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        
-           try {
-            jTextField2.setText(copiarPortapapeles());
-        } catch (UnsupportedFlavorException | IOException ex) {
-        }
+        pegarPortapapeles(jTextField2.getText());
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -256,7 +249,7 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
 
         // TODO add your handling code here:
         
-            jTextField1.setText("");
+            jTextField1.setText(null);
         
 
     }//GEN-LAST:event_jButton2ActionPerformed
