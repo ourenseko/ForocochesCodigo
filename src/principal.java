@@ -219,7 +219,7 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
             } catch (NumberFormatException e) {
             } 
             
-            clave = clave.replace(clave, clave+auxString);
+            clave = clave+auxString;
            
             
         }
