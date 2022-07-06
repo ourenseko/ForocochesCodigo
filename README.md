@@ -7,4 +7,4 @@ Descargar: https://github.com/ourenseko/ForocochesCodigo/raw/main/dist/forocoche
 
 Preview: (Se necesita Java)
 
-![image](https://user-images.githubusercontent.com/25538565/177432196-86461c44-276a-4a0f-91cf-97e94360da8a.png)
+![image](https://user-images.githubusercontent.com/25538565/177515342-bb6fe5fc-7077-4b09-9fb6-0ceff2cc5d56.png)
