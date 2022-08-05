@@ -20,7 +20,8 @@ import javax.swing.JOptionPane;
  * @author Oficina
  */
 public class principal extends javax.swing.JFrame {
-
+    
+    int nIncremento=2;
     /**
      * Creates new form principal
      */
@@ -28,6 +29,7 @@ public class principal extends javax.swing.JFrame {
         initComponents();
 
         this.setTitle("Forocoches Código");
+        
     }
     public void pegarPortapapeles(String pegado){
         StringSelection ss = new StringSelection(pegado);
@@ -113,6 +115,11 @@ public class principal extends javax.swing.JFrame {
         });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/roto2.gif"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,20 +128,24 @@ public class principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBox1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel2)
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(61, Short.MAX_VALUE)
                 .addComponent(jLabel3)
@@ -202,7 +213,7 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
                 
                 int aux = Integer.parseInt(codigo.substring(x, x+1)); // Numeros al formato numerico, si es letra error y salta al siguiente.
                 //JOptionPane.showMessageDialog(rootPane, "Numero: "+aux);
-                aux = aux + 2;
+                aux += nIncremento;
                 
                 auxString = aux+"";  
                 //JOptionPane.showMessageDialog(rootPane, "Caracter sumado: "+auxString);
@@ -219,7 +230,7 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
             } catch (NumberFormatException e) {
             } 
             
-            clave = clave+auxString;
+            clave = clave.replace(clave, clave+auxString);
            
             
         }
@@ -253,6 +264,18 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
         
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        
+        try {
+            nIncremento =  Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa un número de incrementos"));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "No valido, solo números enteros");
+        }
+        
+        
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
