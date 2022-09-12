@@ -194,6 +194,7 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
         
         */
 
+
         if (jTextField1.getText().isEmpty()){
             try {
                 jTextField1.setText(copiarPortapapeles());
@@ -203,8 +204,11 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
         }
         String codigo = jTextField1.getText();
         String clave="";
-        codigo = codigo.replace("_", "");
         
+        
+        /****** V.1.0
+        codigo = codigo.replace("_", "");
+
         //JOptionPane.showMessageDialog(rootPane, "longitud cadena: "+codigo.length());
         for (int x=0; codigo.length()>x  ; x++  ){  
             
@@ -218,22 +222,32 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
                 auxString = aux+"";  
                 //JOptionPane.showMessageDialog(rootPane, "Caracter sumado: "+auxString);
                 
-                
-                /* 
-                codigo = codigo.replaceAll(codigo.substring(x, x+1), auxString); // Sustituimos el numero incrementado 
-                NECESITAMOS CAMBIAR LOS NUMEROS EN LA POSICIÓN SIN USAR REPLACE, PORQUE DA PROBLEMAS AL COINCIDIR NUMEROS
-                LO SOLUCIONAMOS CREANDO UNA CADENA NUEVA
-                */
-                
+                // //codigo = codigo.replaceAll(codigo.substring(x, x+1), auxString); // Sustituimos el numero incrementado 
+                // //NECESITAMOS CAMBIAR LOS NUMEROS EN LA POSICIÓN SIN USAR REPLACE, PORQUE DA PROBLEMAS AL COINCIDIR NUMEROS
+                // //LO SOLUCIONAMOS CREANDO UNA CADENA NUEVA
                 
                 //JOptionPane.showMessageDialog(rootPane, codigo);
+
             } catch (NumberFormatException e) {
+              
             } 
-            
-            clave = clave.replace(clave, clave+auxString);
-           
-            
+            clave = clave.replace(clave, clave+auxString); 
         }
+
+        ********/
+        
+        codigo = codigo.replace(" ", "");
+
+        codigo = codigo.replace("(CERO)", "0");
+        codigo = codigo.replace("(UNO)", "1");
+        codigo = codigo.replace("(DOS)", "2");
+        codigo = codigo.replace("(TRES)", "3");
+        codigo = codigo.replace("(CUATRO)", "4");
+        codigo = codigo.replace("(CINCO)", "5");
+        codigo = codigo.replace("(SEIS)", "6");
+        codigo = codigo.replace("(SIETE)", "7");
+        codigo = codigo.replace("(OCHO)", "8");
+        codigo = codigo.replace("(NUEVE)", "9");
         
         jTextField2.setText(clave);
         pegarPortapapeles(clave);
