@@ -1,12 +1,13 @@
 # ForocochesCodigo
 Descifra instantaneamente el código obtenido en una de las fuentes oficiales para ganar la invitación al foro más grande de España.
 
-*Disclamer: Este software no está vinculado funcionalmente, ni perjudica, ni daña el funcionamiento de Forocoches.*
+*Disclamer: Este software no está vinculado, ni perjudica, ni daña Forocoches.com.*
+
 
 v.1.2022.07.06 | { _ , n+2 } | Descargar: https://github.com/ourenseko/ForocochesCodigo/raw/main/dist/forocochescodigo.jar
 
 
-V.2.2022.09.12 | { " " , (R) } | Comprar: 
+V.2.2022.09.12 | { " " , (R) } Licencia de uso + Actualizaciones: 
 
 
 
