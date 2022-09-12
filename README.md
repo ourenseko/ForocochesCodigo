@@ -3,7 +3,7 @@ Descifra instantaneamente el código obtenido en una de las fuentes oficiales pa
 
 *Disclamer: Este software no está vinculado funcionalmente, ni perjudica, ni daña el funcionamiento de Forocoches.*
 
-v.1.2022.07.06 | { _ , +n } | Descargar: https://github.com/ourenseko/ForocochesCodigo/raw/main/dist/forocochescodigo.jar
+v.1.2022.07.06 | { _ , n+2 } | Descargar: https://github.com/ourenseko/ForocochesCodigo/raw/main/dist/forocochescodigo.jar
 
 
 V.2.2022.09.12 | { " " , (R) } | Descargar: 
