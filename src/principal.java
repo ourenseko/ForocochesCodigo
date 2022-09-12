@@ -233,8 +233,14 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
             } 
             clave = clave.replace(clave, clave+auxString); 
         }
-
+ 
+        jTextField2.setText(clave);
+        pegarPortapapeles(clave); 
+         
+        
         ********/
+        
+        // v2.0 :
         
         codigo = codigo.replace(" ", "");
 
@@ -249,10 +255,11 @@ Muestra el resultado sin espacios en un cuadro de texto y copialo en el portapap
         codigo = codigo.replace("(OCHO)", "8");
         codigo = codigo.replace("(NUEVE)", "9");
         
-        jTextField2.setText(clave);
-        pegarPortapapeles(clave);
+        jTextField2.setText(codigo);
+        pegarPortapapeles(codigo);
 
 
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
