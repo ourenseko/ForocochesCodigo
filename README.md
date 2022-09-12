@@ -9,7 +9,7 @@ Descargar: https://github.com/ourenseko/ForocochesCodigo/raw/main/dist/forocoche
 
 
 
-V.2.2022.09.12 | { " " , ( {\displaystyle \mathbb {R} }\mathbb{R}) }
+V.2.2022.09.12 | { " " , (R) }
 
 Descargar: 
 
