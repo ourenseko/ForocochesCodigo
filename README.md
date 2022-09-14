@@ -7,7 +7,7 @@ Descifra instantaneamente el código obtenido en una de las fuentes oficiales pa
 v.1.2022.07.06 | { _ , n+2 } | Descargar: https://github.com/ourenseko/ForocochesCodigo/raw/main/dist/forocochescodigo.jar
 
 
-V.2.2022.09.12 | { " " , (R) } Licencia de uso + Actualizaciones: 
+V.2.2022.09.12 | { " " , (R) } | Licencia permanente: deeelujoo@gmail.com
 
 
 
